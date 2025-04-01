@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/carousel";
 import { useState } from "react";
 import React from "react";
+import { GTMButton } from "@/components/GTMButton";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -55,14 +56,11 @@ export default function Home() {
           }}>
             #1 BOAT PARTY IN PRAGUE
           </h1>
-          <Button 
-            className="bg-button-primary hover:bg-button-primary-hover text-white text-lg md:text-xl px-4 md:px-6 py-4 md:py-6 rounded-lg"
-            onClick={() => {
-              window.open('https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f', '_blank')
-            }}
+          <GTMButton 
+            href="https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f"
           >
             TICKETS FOR JUST 12 €
-          </Button>
+          </GTMButton>
         </motion.div>
       </section>
 
