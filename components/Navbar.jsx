@@ -3,11 +3,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Ticket } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -86,7 +100,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-50 bg-black">
+        <div className="md:hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm">
           {/* Menu Content */}
           <div className="relative flex flex-col items-center justify-center h-full gap-6 px-4">
             {/* Close Button - Positioned at the top right */}
@@ -101,28 +115,28 @@ export default function Navbar() {
 
             <Link 
               href="/" 
-              className="text-2xl text-white hover:text-gray-200 font-medium"
+              className={`text-2xl font-medium ${pathname === '/' ? 'text-[#FF5F00]' : 'text-white hover:text-gray-200'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               href="/faq" 
-              className="text-2xl text-white hover:text-gray-200 font-medium"
+              className={`text-2xl font-medium ${pathname === '/faq' ? 'text-[#FF5F00]' : 'text-white hover:text-gray-200'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               FAQs
             </Link>
             <Link 
               href="/discounts" 
-              className="text-2xl text-white hover:text-gray-200 font-medium"
+              className={`text-2xl font-medium ${pathname === '/discounts' ? 'text-[#FF5F00]' : 'text-white hover:text-gray-200'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               Discounts
             </Link>
             <Link 
               href="/contact" 
-              className="text-2xl text-white hover:text-gray-200 font-medium"
+              className={`text-2xl font-medium ${pathname === '/contact' ? 'text-[#FF5F00]' : 'text-white hover:text-gray-200'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               Contact Us

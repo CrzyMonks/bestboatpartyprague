@@ -76,7 +76,7 @@ export default function DiscountsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-orange to-brand-dark" />
                 
                 <div className="relative grid md:grid-cols-2 gap-6">
-                  <div className="relative h-[200px] md:h-[250px] md:h-full">
+                  <div className="relative h-[180px] md:h-full">
                     <motion.img
                       src={card.image}
                       alt={card.title}
@@ -86,7 +86,7 @@ export default function DiscountsPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-brand-dark/50" />
                   </div>
-                  <CardContent className="p-12 flex flex-col justify-center">
+                  <CardContent className="p-6 md:p-12 flex flex-col justify-center">
                     <motion.div
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}

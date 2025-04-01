@@ -56,7 +56,7 @@ export default function Home() {
             #1 BOAT PARTY IN PRAGUE
           </h1>
           <Button 
-            className="bg-button-primary hover:bg-button-primary-hover text-white text-xl px-6 py-6 rounded-lg"
+            className="bg-button-primary hover:bg-button-primary-hover text-white text-lg md:text-xl px-4 md:px-6 py-4 md:py-6 rounded-lg"
             onClick={() => {
               window.open('https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f', '_blank')
             }}
@@ -120,55 +120,55 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center"
         >
-          <h2 className="text-4xl md:text-6xl font-extrabold text-center mb-16 text-white tracking-[0.08em]">
+          <h2 className="text-4xl md:text-6xl font-extrabold text-center mb-8 md:mb-16 text-white tracking-[0.08em]">
             REASONS WHY TO BOON WITH US?
           </h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto mt-20">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-12 max-w-5xl mx-auto mt-8 md:mt-20">
             {/* #1 Boat Party */}
             <div className="flex flex-col items-center text-center">
-              <div className="border border-white/50 p-6 rounded-xl mb-4 w-[160px] h-[140px] flex items-center justify-center">
-                <Ship size={50} className="text-white" />
+              <div className="border border-white/50 p-4 md:p-6 rounded-xl mb-4 w-[120px] h-[100px] md:w-[160px] md:h-[140px] flex items-center justify-center">
+                <Ship size={35} className="text-white md:w-[50px] md:h-[50px]" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">#1 Boat Party</h3>
+              <h3 className="text-xl md:text-3xl font-bold text-white mb-2">#1 Boat Party</h3>
             </div>
 
             {/* Best Party Guides */}
             <div className="flex flex-col items-center text-center">
-              <div className="border border-white/50 p-6 rounded-xl mb-4 w-[160px] h-[140px] flex items-center justify-center">
-                <Users size={50} className="text-white" />
+              <div className="border border-white/50 p-4 md:p-6 rounded-xl mb-4 w-[120px] h-[100px] md:w-[160px] md:h-[140px] flex items-center justify-center">
+                <Users size={35} className="text-white md:w-[50px] md:h-[50px]" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Best Party Guides</h3>
+              <h3 className="text-xl md:text-3xl font-bold text-white mb-2">Best Party Guides</h3>
             </div>
 
             {/* Exclusive Offers */}
             <div className="flex flex-col items-center text-center">
-              <div className="border border-white/50 p-6 rounded-xl mb-4 w-[160px] h-[140px] flex items-center justify-center">
-                <Gift size={50} className="text-white" />
+              <div className="border border-white/50 p-4 md:p-6 rounded-xl mb-4 w-[120px] h-[100px] md:w-[160px] md:h-[140px] flex items-center justify-center">
+                <Gift size={35} className="text-white md:w-[50px] md:h-[50px]" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Exclusive Offers</h3>
+              <h3 className="text-xl md:text-3xl font-bold text-white mb-2">Exclusive Offers</h3>
             </div>
 
             {/* Free Entry */}
             <div className="flex flex-col items-center text-center">
-              <div className="border border-white/50 p-6 rounded-xl mb-4 w-[160px] h-[140px] flex items-center justify-center">
-                <Ticket size={50} className="text-white" />
+              <div className="border border-white/50 p-4 md:p-6 rounded-xl mb-4 w-[120px] h-[100px] md:w-[160px] md:h-[140px] flex items-center justify-center">
+                <Ticket size={35} className="text-white md:w-[50px] md:h-[50px]" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Free Entry</h3>
+              <h3 className="text-xl md:text-3xl font-bold text-white mb-2">Free Entry</h3>
             </div>
 
             {/* Welcome Shots */}
             <div className="flex flex-col items-center text-center">
-              <div className="border border-white/50 p-6 rounded-xl mb-4 w-[160px] h-[140px] flex items-center justify-center">
-                <Wine size={50} className="text-white" />
+              <div className="border border-white/50 p-4 md:p-6 rounded-xl mb-4 w-[120px] h-[100px] md:w-[160px] md:h-[140px] flex items-center justify-center">
+                <Wine size={35} className="text-white md:w-[50px] md:h-[50px]" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Welcome Shots</h3>
+              <h3 className="text-xl md:text-3xl font-bold text-white mb-2">Welcome Shots</h3>
             </div>
 
             {/* Crazy Wild Games */}
             <div className="flex flex-col items-center text-center">
-              <div className="border border-white/50 p-6 rounded-xl mb-4 w-[160px] h-[140px] flex items-center justify-center">
-                <Gamepad2 size={50} className="text-white" />
+              <div className="border border-white/50 p-4 md:p-6 rounded-xl mb-4 w-[120px] h-[100px] md:w-[160px] md:h-[140px] flex items-center justify-center">
+                <Gamepad2 size={35} className="text-white md:w-[50px] md:h-[50px]" />
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Crazy Wild Games</h3>
             </div>
