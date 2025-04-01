@@ -43,7 +43,7 @@ export default function DiscountsPage() {
 
   return (
     <div className="min-h-screen bg-brand-dark text-white pt-32 pb-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,11 +76,11 @@ export default function DiscountsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-orange to-brand-dark" />
                 
                 <div className="relative grid md:grid-cols-2 gap-6">
-                  <div className="relative h-[300px] md:h-[400px]">
+                  <div className="relative h-[200px] md:h-[250px] md:h-full">
                     <motion.img
                       src={card.image}
                       alt={card.title}
-                      className="absolute inset-0 w-full h-full object-cover rounded-l-lg"
+                      className="absolute inset-0 w-full h-full object-cover object-center rounded-l-lg"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     />

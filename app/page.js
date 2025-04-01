@@ -12,8 +12,22 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useState } from "react";
+import React from "react";
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 14;
+  const [api, setApi] = useState(null);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    api.on("select", () => {
+      setCurrentSlide(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
     <div className="min-h-screen bg-brand-dark">
       {/* Hero Section with Video Background */}
@@ -22,7 +36,9 @@ export default function Home() {
           autoPlay 
           loop 
           muted 
+          playsInline
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          style={{ pointerEvents: 'none' }}
         >
           <source src="/videos/party-video.mp4" type="video/mp4" />
         </video>
@@ -62,27 +78,27 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-bold mb-8 md:mb-8 tracking-[0.08em]" style={{color: '#F9CF58'}}>
             FEATURED ON
           </h2>
-          <div className="flex flex-row justify-center items-center gap-8 md:gap-12 space-x-8">
+          <div className="flex flex-row justify-center items-center gap-4 md:gap-12 space-x-4 md:space-x-8">
             <Image 
               src="https://imgs.search.brave.com/somNJG1usl4Q3jbtMTUGIfsdFxQC_1iVOi5TLmjI1UQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc3F1YXJlc3Bh/Y2UtY2RuLmNvbS9j/b250ZW50L3YxLzVi/ZmQ0OTdkMzYwOTli/OGNhNWRmMjAzOS8x/NTQzMzI4MDk0OTAz/LUZVSTYyWDE4MTA2/RlMwSTdGNEFSL0dZ/R19FeHByZXNzaXZl/X0xvZ29fMDFfUmVk/X1JHQl9IUi5wbmc_/Zm9ybWF0PTE1MDB3" 
               alt="Get Your Guide" 
               width={100} 
               height={33} 
-              className="w-[90px] md:w-[180px] h-auto"
+              className="w-[90px] md:w-[120px] h-auto"
             />
             <Image 
               src="/images/tripadvisor.png" 
               alt="TripAdvisor" 
               width={100} 
               height={33}
-              className="w-[90px] md:w-[180px] h-auto" 
+              className="w-[90px] md:w-[120px] h-auto" 
             />
             <Image 
               src="/images/bookingcom-1.svg" 
               alt="Booking.com" 
               width={100} 
               height={33}
-              className="w-[90px] md:w-[180px] h-auto"
+              className="w-[90px] md:w-[120px] h-auto"
             />
           </div>
         </motion.div>
@@ -211,7 +227,7 @@ export default function Home() {
                 <CarouselContent>
                   {[1, 2, 3, 4, 5, 6].map((index) => (
                     <CarouselItem key={index}>
-                      <div className="relative w-full h-[500px] md:h-[700px] rounded-xl overflow-hidden">
+                      <div className="relative w-full h-[400px] md:h-[550px] rounded-xl overflow-hidden">
                         <Image
                           src={`/images/boat-party-${index}.jpg`}
                           alt={`Boat Party ${index}`}
@@ -223,10 +239,10 @@ export default function Home() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-4 bg-black/30 hover:bg-black/50 text-white h-16 w-16">
+                <CarouselPrevious className="left-4 bg-black/30 hover:bg-black/50 text-white h-12 w-12 md:h-16 md:w-16">
                   
                 </CarouselPrevious>
-                <CarouselNext className="right-4 bg-black/30 hover:bg-black/50 text-white h-16 w-16">
+                <CarouselNext className="right-4 bg-black/30 hover:bg-black/50 text-white h-12 w-12 md:h-16 md:w-16">
                   
                 </CarouselNext>
               </Carousel>
@@ -254,7 +270,7 @@ export default function Home() {
                 <CarouselContent>
                   {[1, 2, 3, 4, 5, 6].map((index) => (
                     <CarouselItem key={index}>
-                      <div className="relative w-full h-[500px] md:h-[700px] rounded-xl overflow-hidden">
+                      <div className="relative w-full h-[400px] md:h-[550px] rounded-xl overflow-hidden">
                         <Image
                           src={`/images/beer-pong-${index}.jpg`}
                           alt={`Beer Pong ${index}`}
@@ -266,10 +282,10 @@ export default function Home() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-4 bg-black/30 hover:bg-black/50 text-white h-16 w-16">
+                <CarouselPrevious className="left-4 bg-black/30 hover:bg-black/50 text-white h-12 w-12 md:h-16 md:w-16">
                   
                 </CarouselPrevious>
-                <CarouselNext className="right-4 bg-black/30 hover:bg-black/50 text-white h-16 w-16">
+                <CarouselNext className="right-4 bg-black/30 hover:bg-black/50 text-white h-12 w-12 md:h-16 md:w-16">
                   
                 </CarouselNext>
               </Carousel>
@@ -299,7 +315,7 @@ export default function Home() {
                 <CarouselContent>
                   {[1, 2, 3, 4, 5, 6].map((index) => (
                     <CarouselItem key={index}>
-                      <div className="relative w-full h-[500px] md:h-[700px] rounded-xl overflow-hidden">
+                      <div className="relative w-full h-[400px] md:h-[550px] rounded-xl overflow-hidden">
                         <Image
                           src={`/images/epic-party-${index}.jpg`}
                           alt={`Epic Party ${index}`}
@@ -311,10 +327,10 @@ export default function Home() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-4 bg-black/30 hover:bg-black/50 text-white h-16 w-16">
+                <CarouselPrevious className="left-4 bg-black/30 hover:bg-black/50 text-white h-12 w-12 md:h-16 md:w-16">
                   
                 </CarouselPrevious>
-                <CarouselNext className="right-4 bg-black/30 hover:bg-black/50 text-white h-16 w-16">
+                <CarouselNext className="right-4 bg-black/30 hover:bg-black/50 text-white h-12 w-12 md:h-16 md:w-16">
                   
                 </CarouselNext>
               </Carousel>
@@ -395,7 +411,7 @@ export default function Home() {
               }
             ].map((deal, index) => (
               <div key={index} className="group relative">
-                <div className={`relative rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${deal.isBestSeller ? 'hover:shadow-[0_0_80px_rgba(239,191,4,0.8)]' : 'hover:shadow-[0_0_80px_rgba(255,95,0,0.8)]'} h-[700px] flex flex-col`}>
+                <div className={`relative rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] ${deal.isBestSeller ? 'hover:shadow-[0_0_80px_rgba(239,191,4,0.8)]' : 'hover:shadow-[0_0_80px_rgba(255,95,0,0.8)]'} h-[500px] flex flex-col`}>
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image 
@@ -410,44 +426,44 @@ export default function Home() {
                   {/* Content */}
                   <div className="relative flex flex-col h-full">
                     {/* Header */}
-                    <div className="flex flex-col items-center pt-6 gap-3">
-                      <div className="flex items-center gap-4">
+                    <div className="flex flex-col items-center pt-3 gap-1">
+                      <div className="flex items-center gap-3">
                         {deal.bestSellerIcon && (
                           <Image 
                             src={deal.bestSellerIcon}
                             alt="Best Seller"
-                            width={85}
-                            height={85}
-                            className="mb-2"
+                            width={50}
+                            height={50}
+                            className="mb-1"
                           />
                         )}
                         {!deal.bestSellerIcon && deal.icon && (
                           <Image 
                             src={deal.icon}
                             alt={deal.title}
-                            width={85}
-                            height={85}
+                            width={50}
+                            height={50}
                           />
                         )}
-                        {!deal.bestSellerIcon && !deal.icon && <div className="w-[48px] h-[48px]" />}
+                        {!deal.bestSellerIcon && !deal.icon && <div className="w-[32px] h-[32px]" />}
                       </div>
-                      <p className="text-white text-3xl font-bold">From {deal.price} €</p>
+                      <p className="text-white text-xl font-bold">From {deal.price} €</p>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-center text-5xl font-bold text-white px-6 mt-4">{deal.title}</h3>
+                    <h3 className="text-center text-3xl font-bold text-white px-4 mt-1">{deal.title}</h3>
 
                     {/* Features */}
-                    <div className="p-6 pl-12 flex flex-col flex-grow">
-                      <p className="text-white text-2xl font-bold mb-6">YOU GET:</p>
-                      <ul className="space-y-3 text-white/90 text-xl flex-grow">
+                    <div className="p-3 pl-6 flex flex-col flex-grow">
+                      <p className="text-white text-lg font-bold mb-2">YOU GET:</p>
+                      <ul className="space-y-1.5 text-white/90 text-base flex-grow">
                         {deal.features.map((feature, i) => (
                           <li key={i} className={feature ? "" : "invisible"}>
                             {feature ? `- ${feature}` : "-"}
                           </li>
                         ))}
                       </ul>
-                      <Button className={`w-full mt-8 bg-transparent border-2 border-white hover:bg-white hover:text-black text-white text-2xl py-7 rounded-full transition-all duration-300 ${deal.isBestSeller ? 'hover:border-[#efbf04] hover:shadow-[0_0_80px_rgba(239,191,4,0.8)]' : 'hover:border-[#ff5f00] hover:shadow-[0_0_80px_rgba(255,95,0,0.8)]'}`}
+                      <Button className={`w-full mt-4 bg-transparent border-2 border-white hover:bg-white hover:text-black text-white text-lg py-4 rounded-full transition-all duration-300 ${deal.isBestSeller ? 'hover:border-[#efbf04] hover:shadow-[0_0_80px_rgba(239,191,4,0.8)]' : 'hover:border-[#ff5f00] hover:shadow-[0_0_80px_rgba(255,95,0,0.8)]'}`}
                       onClick={() => {
                         window.open('https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f', '_blank')
                       }}>
@@ -549,11 +565,12 @@ export default function Home() {
               loop: true,
             }}
             className="w-full"
+            setApi={setApi}
           >
             <CarouselContent className="-ml-4">
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((index) => (
                 <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <div className="relative h-[600px] md:h-[800px] rounded-xl overflow-hidden">
+                  <div className="relative h-[400px] md:h-[550px] rounded-xl overflow-hidden">
                     <Image
                       src={`/images/party-life-${index}.jpg`}
                       alt={`Party Life ${index}`}
@@ -566,12 +583,19 @@ export default function Home() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-8 bg-black/30 hover:bg-black/50 text-white h-16 w-16">
-              
-            </CarouselPrevious>
-            <CarouselNext className="right-8 bg-black/30 hover:bg-black/50 text-white h-16 w-16">
-              
-            </CarouselNext>
+            <div className="flex justify-center gap-2 mt-4">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentSlide ? 'bg-[#ff5f00] w-4' : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                  onClick={() => {
+                    api?.scrollTo(index);
+                  }}
+                />
+              ))}
+            </div>
           </Carousel>
         </motion.div>
       </section>
