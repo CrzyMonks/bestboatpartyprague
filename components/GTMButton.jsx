@@ -3,18 +3,27 @@
 import { Button } from "@/components/ui/button";
 import { sendGTMEvent } from '@next/third-parties/google';
 
-export function GTMButton({ href, children }) {
+export function GTMButton({ href, children, className }) {
   return (
     <Button 
       asChild 
-      className="bg-[#FF5F00] text-white hover:bg-[#FF5F00]/90"
+      className={className || "bg-[#FF5F00] text-white hover:bg-[#FF5F00]/90"}
       onClick={() => sendGTMEvent({
-        event: 'buttonClick',
-        value: {
-          buttonText: children,
-          destination: href,
-          buttonId: 'organizer-link',
-          clickId: 'buy_tickets' 
+        event: 'purchase',
+        click: {
+          id: 'buy_tickets',
+          text: children,
+          classes: className,
+          element: 'button',
+          target: '_blank',
+          url: href
+        },
+        ecommerce: {
+          items: [{
+            item_name: 'Boat Party Ticket',
+            price: '12.00',
+            currency: 'EUR'
+          }]
         }
       })}
     >
