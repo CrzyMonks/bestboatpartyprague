@@ -120,9 +120,10 @@ export default function Home() {
           src="/images/party-crowd.jpg" 
           alt="Party Background" 
           fill
-          className="object-cover object-center absolute inset-0 z-0"
+          className="object-cover object-center absolute inset-0 z-0 "
           priority
         />
+        <div className="absolute inset-0 bg-black/30 z-[1]"></div>
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
