@@ -142,15 +142,15 @@ export default function Navbar() {
             >
               Contact Us
             </Link>
-            <Button 
+            <GTMButton
+              href="https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f"
               className="bg-[#db8a74] hover:bg-[#db8a74]/90 text-white rounded-full px-4 py-4 text-base w-full max-w-[160px] flex items-center justify-center gap-2"
-              onClick={() => {
-                window.open('https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f', '_blank')
-              }}
+              clickId="navbar_book_now"
+              buttonId="navbar-button"
             >
               <Ticket className="w-4 h-4" />
               Book Now
-            </Button>
+            </GTMButton>
           </div>
         </div>
       )}
