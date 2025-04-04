@@ -16,6 +16,7 @@ import { useState } from "react";
 import React from "react";
 import { GTMButton } from "@/components/GTMButton";
 
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 14;
@@ -58,9 +59,20 @@ export default function Home() {
           </h1>
           <GTMButton 
             href="https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f"
+            className="bg-[#FF5F00] text-white hover:bg-[#FF5F00]/90"
+            clickId="hero_buy_tickets"
+            buttonId="hero-button"
           >
             TICKETS FOR JUST 12 €
           </GTMButton>
+          {/* <Button
+          className="bg-[#FF5F00] text-white hover:bg-[#FF5F00]/90"
+          onClick={() => {
+            window.open('https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f', '_blank');
+          }}
+           >
+            TICKETS FOR JUST 12 €
+          </Button> */}
         </motion.div>
       </section>
 
@@ -461,12 +473,12 @@ export default function Home() {
                           </li>
                         ))}
                       </ul>
-                      <Button className={`w-full mt-4 bg-transparent border-2 border-white hover:bg-white hover:text-black text-white text-lg py-4 rounded-full transition-all duration-300 ${deal.isBestSeller ? 'hover:border-[#efbf04] hover:shadow-[0_0_80px_rgba(239,191,4,0.8)]' : 'hover:border-[#ff5f00] hover:shadow-[0_0_80px_rgba(255,95,0,0.8)]'}`}
-                      onClick={() => {
-                        window.open('https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f', '_blank')
-                      }}>
+                      <GTMButton className={`w-full mt-4 bg-transparent border-2 border-white hover:bg-white hover:text-black text-white text-lg py-4 rounded-full transition-all duration-300 ${deal.isBestSeller ? 'hover:border-[#efbf04] hover:shadow-[0_0_80px_rgba(239,191,4,0.8)]' : 'hover:border-[#ff5f00] hover:shadow-[0_0_80px_rgba(255,95,0,0.8)]'}`}
+                        href="https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f"
+                        clickId={`package_${deal.title.toLowerCase().replace(' ', '_')}`}
+                        buttonId={`package-${deal.title.toLowerCase().replace(' ', '-')}`}>
                         Book Now
-                      </Button>
+                      </GTMButton>
                     </div>
                   </div>
                 </div>

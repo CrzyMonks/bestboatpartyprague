@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from 'react';
 import { Ticket } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { GTMButton } from "@/components/GTMButton";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,15 +69,15 @@ export default function Navbar() {
 
         {/* Book Now Button - Right Side */}
         <div className="w-[160px] flex justify-end">
-          <Button 
+          <GTMButton
+            href="https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f"
             className="hidden md:flex bg-[#db8a74] hover:bg-[#db8a74]/90 text-white rounded-full px-6 py-4 font-medium items-center gap-2 text-base"
-            onClick={() => {
-              window.open('https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f', '_blank')
-            }}
+            clickId="navbar_book_now"
+            buttonId="navbar-button"
           >
             <Ticket className="w-5 h-5" />
             Book Now
-          </Button>
+          </GTMButton>
 
           {/* Mobile Menu Button */}
           <button 

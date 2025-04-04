@@ -3,6 +3,7 @@ import "./globals.css";
 import { GoogleTagManager } from '@next/third-parties/google'
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react"
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
