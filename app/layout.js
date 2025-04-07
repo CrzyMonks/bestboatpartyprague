@@ -1,3 +1,4 @@
+
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { GoogleTagManager } from '@next/third-parties/google'
@@ -18,7 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
       <GoogleTagManager gtmId="GTM-P5DSX4XJ" />
       <body className="font-poppins">
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5DSX4XJ"
