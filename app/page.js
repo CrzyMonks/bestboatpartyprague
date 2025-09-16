@@ -278,16 +278,17 @@ export default function Home() {
         > 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 md:gap-8 lg:gap-10">
             {/* NEW YEAR Card */}
-            <div className="group relative">
+            <div className="group relative cursor-pointer"
+                 onClick={() => window.open('https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f', '_blank')}>
              <div className="relative rounded-2xl h-[400px] md:h-[450px] lg:h-[600px] flex flex-col transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_80px_rgba(255,95,0,0.6)]">
-  
+
               {/* Background with rounded corners */}
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <div className="relative w-full h-full">
-                  <Image 
-                    src="/images/new_year.JPG" 
-                    alt="New Year Experience" 
-                    fill 
+                  <Image
+                    src="/images/new_year.JPG"
+                    alt="New Year Experience"
+                    fill
                     className="object-cover"
                   />
                 </div>
@@ -302,7 +303,7 @@ export default function Home() {
                     alt="From 69€"
                     width={60}
                     height={50}
-                    className="drop-shadow-lg w-12 h-10 sm:w-16 sm:h-12 md:w-20 md:h-15 lg:w-24 lg:h-16"
+                    className="drop-shadow-lg w-16 h-12 sm:w-20 sm:h-16 md:w-20 md:h-15 lg:w-24 lg:h-16"
                   />
                 </div>
 
@@ -340,15 +341,16 @@ export default function Home() {
             </div>
 
             {/* PARTY CRUISE Card */}
-            <div className="group relative">
+            <div className="group relative cursor-pointer"
+                 onClick={() => window.open('https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f', '_blank')}>
               <div className="relative rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_80px_rgba(255,95,0,0.6)] h-[400px] md:h-[450px] lg:h-[600px] flex flex-col">
                 {/* Background Video/Image */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <div className="relative w-full h-full">
-                  <Image 
-                    src="/images/boat-party-1.jpg" 
-                    alt="Party Cruise Experience" 
-                    fill 
+                  <Image
+                    src="/images/boat-party-1.jpg"
+                    alt="Party Cruise Experience"
+                    fill
                     className="object-cover"
                   />
                 </div>
@@ -362,7 +364,7 @@ export default function Home() {
                     alt="From 19€"
                     width={60}
                     height={40}
-                    className="drop-shadow-lg w-12 h-8 sm:w-16 sm:h-10 md:w-20 md:h-12 lg:w-24 lg:h-14"
+                    className="drop-shadow-lg w-16 h-10 sm:w-20 sm:h-12 md:w-20 md:h-12 lg:w-24 lg:h-14"
                   />
                 </div>
 
@@ -400,15 +402,16 @@ export default function Home() {
             </div>
 
             {/* EPIC CLUB AFTER Card */}
-            <div className="group relative block md:col-span-2 md:justify-self-center md:w-80 lg:col-span-1 lg:justify-self-auto lg:w-auto">
+            <div className="group relative block md:col-span-2 md:justify-self-center md:w-80 lg:col-span-1 lg:justify-self-auto lg:w-auto cursor-pointer"
+                 onClick={() => window.open('https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f', '_blank')}>
               <div className="relative rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_80px_rgba(255,95,0,0.6)] h-[400px] md:h-[450px] lg:h-[600px] flex flex-col w-full">
                 {/* Background Video/Image */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <div className="relative w-full h-full">
-                  <Image 
-                    src="/images/Epic.jpg" 
-                    alt="Epic Club After Experience" 
-                    fill 
+                  <Image
+                    src="/images/Epic.jpg"
+                    alt="Epic Club After Experience"
+                    fill
                     className="object-cover"
                   />
                 </div>
@@ -422,7 +425,7 @@ export default function Home() {
                     alt="From 12€"
                     width={60}
                     height={40}
-                    className="drop-shadow-lg w-12 h-8 sm:w-16 sm:h-10 md:w-20 md:h-12 lg:w-24 lg:h-14"
+                    className="drop-shadow-lg w-16 h-10 sm:w-20 sm:h-12 md:w-20 md:h-12 lg:w-24 lg:h-14"
                   />
                 </div>
 
