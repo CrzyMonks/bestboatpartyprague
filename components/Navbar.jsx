@@ -30,41 +30,69 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center w-[180px]">
           <Image
-            src="/images/logo.png"
+            src={pathname === '/' ? "/images/logo.png" : "/images/prague_cruise_black.png"}
             alt="Prague Party Cruise"
             width={180}
             height={40}
-            className="h-12 w-auto"
+            className={pathname === '/' ? "h-12 w-auto" : "h-12 w-auto object-contain"}
             priority
           />
         </Link>
 
         {/* Navigation Links - Centered with equal spacing */}
-        <div className="hidden md:flex items-center justify-center gap-12 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="hidden md:flex items-center justify-center gap-10 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <Link 
             href="/" 
-            className="text-base text-white hover:text-gray-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#ff5f00] after:transition-all hover:after:w-full"
+            className={`text-base font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:transition-all hover:after:w-full ${
+              pathname === '/' 
+                ? 'text-white hover:text-white/80 after:bg-white' 
+                : 'text-[#ff5f00] hover:text-[#ff5f00]/80 after:bg-[#ff5f00]'
+            }`}
           >
             Home
           </Link>
           <Link 
             href="/faq" 
-            className="text-base text-white hover:text-gray-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#ff5f00] after:transition-all hover:after:w-full"
+            className={`text-base font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:transition-all hover:after:w-full ${
+              pathname === '/' 
+                ? 'text-white hover:text-white/80 after:bg-white' 
+                : 'text-[#ff5f00] hover:text-[#ff5f00]/80 after:bg-[#ff5f00]'
+            }`}
           >
             FAQs
           </Link>
           <Link 
             href="/discounts" 
-            className="text-base text-white hover:text-gray-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#ff5f00] after:transition-all hover:after:w-full"
+            className={`text-base font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:transition-all hover:after:w-full ${
+              pathname === '/' 
+                ? 'text-white hover:text-white/80 after:bg-white' 
+                : 'text-[#ff5f00] hover:text-[#ff5f00]/80 after:bg-[#ff5f00]'
+            }`}
           >
             Discounts
           </Link>
           <Link 
             href="/contact" 
-            className="text-base text-white hover:text-gray-200 font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-[#ff5f00] after:transition-all hover:after:w-full"
+            className={`text-base font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:transition-all hover:after:w-full ${
+              pathname === '/' 
+                ? 'text-white hover:text-white/80 after:bg-white' 
+                : 'text-[#ff5f00] hover:text-[#ff5f00]/80 after:bg-[#ff5f00]'
+            }`}
           >
             Contact Us
           </Link>
+          <a 
+            href="https://www.facebook.com/warehouseentertainmentprague/photos" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-base font-medium relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:transition-all hover:after:w-full ${
+              pathname === '/' 
+                ? 'text-white hover:text-white/80 after:bg-white' 
+                : 'text-[#ff5f00] hover:text-[#ff5f00]/80 after:bg-[#ff5f00]'
+            }`}
+          >
+            Gallery
+          </a>
         </div>
 
         {/* Book Now Button - Right Side */}
@@ -81,7 +109,11 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-white"
+            className={`md:hidden ${
+              pathname === '/' 
+                ? 'text-white' 
+                : 'text-[#ff5f00]'
+            }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -142,6 +174,15 @@ export default function Navbar() {
             >
               Contact Us
             </Link>
+            <a 
+              href="https://www.facebook.com/warehouseentertainmentprague/photos" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl font-medium text-white hover:text-gray-200"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Gallery
+            </a>
             <GTMButton
               href="https://connect.boomevents.org/cs/organizer/2e24ee9e-6ef3-428b-a037-a5efabf8f07f"
               className="bg-[#db8a74] hover:bg-[#db8a74]/90 text-white rounded-full px-4 py-4 text-base w-full max-w-[160px] flex items-center justify-center gap-2"

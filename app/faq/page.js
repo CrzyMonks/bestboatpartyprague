@@ -10,12 +10,12 @@ import { motion, AnimatePresence } from "framer-motion"
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen bg-brand-dark text-text-primary pt-32 pb-16 px-4 md:px-8">
+    <div className="min-h-screen bg-white text-black pt-32 pb-16 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl font-bold text-center mb-8 px-4 md:px-0"
+          className="text-5xl font-bold text-center mb-8 px-4 md:px-0 text-black"
         >
           FAQs
         </motion.h1>
@@ -24,7 +24,7 @@ export default function FAQPage() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-brand-gold text-center mb-16 text-lg max-w-3xl mx-auto px-4 md:px-8"
+          className="text-black/80 text-center mb-16 text-lg max-w-3xl mx-auto px-4 md:px-8"
         >
           We have created a detailed section below that answers frequently asked questions. If we didn&apos;t cover something, please feel free to contact us and a member of our team will be happy to assist you. You can reach us directly, via text message or email.
         </motion.p>

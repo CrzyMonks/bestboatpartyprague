@@ -11,13 +11,20 @@ module.exports = {
   		fontFamily: {
   			sans: ['var(--font-poppins)'],
   			poppins: ['var(--font-poppins)'],
+  			'open-sans': ['var(--font-open-sans)', 'Open Sans', 'sans-serif'],
+  			'sailors': ['Sailors', 'cursive'],
+  			'lovelo': ['Lovelo', 'sans-serif'],
+  			'the-seasons': ['The Seasons', 'serif'],
   		},
   		colors: {
   			brand: {
   				orange: '#ff5f00',
   				peach: '#db8a74',
   				dark: '#0F1729',
-  				gold: '#FFD700'
+  				gold: '#FFD700',
+  				cream: '#F5F5DC',
+  				'cream-light': '#FEFCF3',
+  				'cream-dark': '#F0E68C'
   			},
   			text: {
   				primary: '#FFFFFF',

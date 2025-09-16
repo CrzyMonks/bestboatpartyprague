@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export default function ContactPage() {
   return (
-    <div className="relative min-h-screen bg-brand-dark overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -18,7 +18,7 @@ export default function ContactPage() {
           <source src="/videos/party-video.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay to ensure video doesn't overpower the brand-dark background */}
-        <div className="absolute inset-0 bg-brand-dark/80"></div>
+        <div className="absolute inset-0"></div>
       </div>
 
       {/* Content */}
@@ -29,7 +29,7 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
           className="text-center space-y-8"
         >
-          <h2 className="text-xl md:text-2xl text-text-primary mb-6">
+          <h2 className="text-xl md:text-2xl text-black mb-6">
             Need immediate assistance?
           </h2>
 
@@ -40,7 +40,7 @@ export default function ContactPage() {
           >
             <Button 
               asChild
-              className="bg-brand-orange hover:bg-button-primary-hover text-text-primary px-6 py-6 rounded-full text-lg flex items-center gap-2"
+              className="bg-brand-orange hover:bg-button-primary-hover text-white px-6 py-6 rounded-full text-lg flex items-center gap-2"
             >
               <a 
                 href="https://wa.me/420777278258" 
@@ -55,10 +55,10 @@ export default function ContactPage() {
             </Button>
           </motion.div>
 
-          <div className="h-px w-24 bg-text-primary/20 mx-auto my-6"></div>
+          <div className="h-px w-24 bg-white/20 mx-auto my-6"></div>
 
           <div className="space-y-4">
-            <h3 className="text-lg md:text-xl text-text-primary">
+            <h3 className="text-lg md:text-xl text-black">
               Have a general inquiry?
             </h3>
             
