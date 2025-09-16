@@ -22,9 +22,8 @@ export default function DiscountsPage() {
   const cards = [
     {
       title: "Birthday Celebrations",
-      description:
-        "Make your special day truly magical with our elegant venues and personalized service. Perfect for ceremonies and receptions.",
-      image: "/images/birthday-party.jpg",
+      description: "Make your special day truly magical with our elegant venues and personalized service. Perfect for ceremonies and receptions.",
+      image: "/images/birthday.jpeg",
     },
     {
       title: "Group Parties",
@@ -34,14 +33,14 @@ export default function DiscountsPage() {
     },
     {
       title: "Stag Parties",
-      description: "Contact us to get special offers for your stag parties.",
-      image: "/images/stag-party.jpg",
-    },
-    {
-      title: "Bachelorette Parties",
-      description: "Contact us to get special offers for your bachelorette parties.",
+      description: "Contact us to get special offers for your stag parties",
       image: "/images/bachlorette-party.jpg",
     },
+    {
+      title: "Bachlorettes Parties",
+      description: "Contact us to get special offers for your bachlorettes parties",
+      image: "/images/stag-party.jpg",
+    }
   ]
 
   return (
